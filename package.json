@@ -1,0 +1,44 @@
+{
+    "name": "pix",
+    "version": "1.0.0",
+    "description": "pix",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon index.js",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Rockytcp/pix.git"
+    },
+    "keywords": [
+        "pix"
+    ],
+    "author": "Gustavo Braganti Pessoa",
+    "lint-staged": {
+        "*.js": "eslint --fix"
+    },
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Rockytcp/pix/issues"
+    },
+    "homepage": "https://github.com/Rockytcp/pix#readme",
+    "type": "module",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.31.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-plugin-import": "^2.23.4",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^5.1.0",
+        "husky": "^7.0.1",
+        "lint-staged": "^11.1.1",
+        "nodemon": "^2.0.12",
+        "prettier": "^2.3.2"
+    }
+}
