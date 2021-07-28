@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "nodemon index.js",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "start": "node index.js"
     },
     "repository": {
         "type": "git",
@@ -27,7 +28,9 @@
     "type": "module",
     "dependencies": {
         "dotenv": "^10.0.0",
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "pg": "^8.7.1",
+        "sequelize": "^6.6.5"
     },
     "devDependencies": {
         "eslint": "^7.31.0",
