@@ -37,7 +37,6 @@ class UserDbModules {
 
     async deleteUser(id) {
         const deletedUser = await dbConnect('user').where('id', id).del().returning('id')
-        console.log(deletedUser)
         return deletedUser
     }
 }
