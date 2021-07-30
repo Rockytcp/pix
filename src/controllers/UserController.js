@@ -10,7 +10,7 @@ class UserController {
             })
         } catch (err) {
             console.log(err)
-            return res.status(500).json({ error: err.detail })
+            return res.status(400).json({ error: err.detail })
         }
     }
 
@@ -21,7 +21,7 @@ class UserController {
             res.status(200).json(users)
         } catch (err) {
             console.log(err)
-            return res.status(500).json({ error: err.detail })
+            return res.status(400).json({ error: err.detail })
         }
     }
 
@@ -35,7 +35,7 @@ class UserController {
             res.status(200).json(user)
         } catch (err) {
             console.log(err)
-            return res.status(500).json({ error: err.detail })
+            return res.status(400).json({ error: err.detail })
         }
     }
 
@@ -49,7 +49,7 @@ class UserController {
             res.status(200).json({ UserAtualizado: updatedUser })
         } catch (err) {
             console.log(err)
-            return res.status(500).json({ error: err.detail })
+            return res.status(400).json({ error: err.detail })
         }
     }
 
@@ -61,11 +61,11 @@ class UserController {
                 return res.status(404).json({ error: 'User not found' })
             }
             return res.status(200).json({
-                success: `Usuário com id = ${deletedUser} foi corretamente deletado do Banco de Dados`,
+                success: `User with id = ${deletedUser} was correctly deleted from database`,
             })
         } catch (err) {
             console.log(err)
-            return res.status(500).json({ error: err.detail })
+            return res.status(400).json({ error: err.detail })
         }
     }
 }

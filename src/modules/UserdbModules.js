@@ -1,6 +1,6 @@
 import { dbConnect } from '../../data/db.js'
 
-class DbModules {
+class UserDbModules {
     async createUser(firstName, lastName, email) {
         const id = await dbConnect('user')
             .insert({
@@ -42,4 +42,4 @@ class DbModules {
     }
 }
 
-export { DbModules }
+export { UserDbModules }
