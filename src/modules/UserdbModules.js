@@ -1,12 +1,16 @@
 import { dbConnect } from '../../data/db.js'
 
 class UserDbModules {
-    async createUser(firstName, lastName, email) {
+    async createUser(fullName, userDocument, email, address, city, state, postalCode) {
         const id = await dbConnect('user')
             .insert({
-                email,
-                firstName: firstName,
-                lastName: lastName,
+                fullName: fullName,
+                userDocument: userDocument,
+                email: email,
+                address: address,
+                city: city,
+                state: state,
+                postalCode: postalCode,
             })
             .returning('id')
 
@@ -19,18 +23,40 @@ class UserDbModules {
     }
 
     async getUserById(id) {
-        const user = await dbConnect('user').where('id', id)
+        const user = await dbConnect('user').where('id', id).first()
         return user
     }
 
-    async updateUser(id, firstName, lastName, email) {
+    async updateUser(
+        id,
+        fullName,
+        userDocument,
+        email,
+        address,
+        city,
+        state,
+        postalCode
+    ) {
         const updatedUser = await dbConnect('user').where('id', id).update(
             {
-                firstName: firstName,
-                lastName: lastName,
+                fullName: fullName,
+                userDocument: userDocument,
                 email: email,
+                address: address,
+                city: city,
+                state: state,
+                postalCode: postalCode,
             },
-            ['id', 'firstName', 'lastName', 'email']
+            [
+                'id',
+                'fullName',
+                'userDocument',
+                'email',
+                'address',
+                'city',
+                'state',
+                'postalCode',
+            ]
         )
         return updatedUser
     }

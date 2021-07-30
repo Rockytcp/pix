@@ -1,34 +1,53 @@
 import { UserDbModules } from '../modules/UserdbModules.js'
 class UserService {
     async createUserService(reqData) {
-        const { firstName, lastName, email } = reqData
-        const dbModules = new UserDbModules()
-        return await dbModules.createUser(firstName, lastName, email)
+        const { fullName, userDocument, email, address, city, state, postalCode } =
+            reqData
+        const userDbModules = new UserDbModules()
+        return await userDbModules.createUser(
+            fullName,
+            userDocument,
+            email,
+            address,
+            city,
+            state,
+            postalCode
+        )
     }
 
     async getAllUsersService() {
-        const dbModules = new UserDbModules()
-        const users = await dbModules.getUsers()
+        const userDbModules = new UserDbModules()
+        const users = await userDbModules.getUsers()
         return users
     }
 
     async getUserById(id) {
-        const dbModules = new UserDbModules()
-        const user = await dbModules.getUserById(id)
+        const userDbModules = new UserDbModules()
+        const user = await userDbModules.getUserById(id)
         return user
     }
 
     async updateUser(reqId, reqData) {
-        const { firstName, lastName, email } = reqData
+        const { fullName, userDocument, email, address, city, state, postalCode } =
+            reqData
         const id = reqId
-        const dbModules = new UserDbModules()
-        const updatedUser = dbModules.updateUser(id, firstName, lastName, email)
+        const userDbModules = new UserDbModules()
+        const updatedUser = userDbModules.updateUser(
+            id,
+            fullName,
+            userDocument,
+            email,
+            address,
+            city,
+            state,
+            postalCode
+        )
         return updatedUser
     }
 
     async deleteUser(id) {
-        const dbModules = new UserDbModules()
-        const deletedUser = await dbModules.deleteUser(id)
+        const userDbModules = new UserDbModules()
+        const deletedUser = await userDbModules.deleteUser(id)
         return deletedUser
     }
 }
